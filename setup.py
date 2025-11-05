@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='gPhoton-astro',  # choose a unique name
+    name='gPhoton-astro',
     version='1.0.3',
     author='Joysankar Majumdar',
     author_email='j.majumdar@uw.edu.pl',
