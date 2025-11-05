@@ -1,0 +1,41 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - 'v*'  # Trigger when you push a version tag (e.g., v1.0.0)
+
+jobs:
+  build-and-publish:
+    name: Build and Publish gPhoton-astro 🪐
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Upgrade pip and install build tools
+        run: |
+          python -m pip install --upgrade pip setuptools wheel build
+
+      - name: Pre-install required scientific dependencies
+        run: |
+          python -m pip install numpy pandas astropy requests scipy
+
+      - name: Verify dependency versions
+        run: |
+          python -c "import numpy, pandas, astropy, requests, scipy; \
+          print(f'NumPy={numpy.__version__}, Pandas={pandas.__version__}, Astropy={astropy.__version__}, Requests={requests.__version__}, SciPy={scipy.__version__}')"
+
+      - name: Build package
+        run: python -m build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.8.10
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
