@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gPhoton-astro',
-    version='1.0.3',
+    version='1.0.4',
     author='Joysankar Majumdar',
     author_email='j.majumdar@uw.edu.pl',
     description='Modified version of gPhoton for GALEX photon data analysis',
