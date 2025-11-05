@@ -1,37 +1,26 @@
-"""
-.. module:: setup
-
-   :synopsis: This script is used to setup the pip package.
-
-.. moduleauthor:: Chase Million <chase.million@gmail.com>
-"""
-
-from __future__ import absolute_import
-from __future__ import unicode_literals
-from os import path
-# Always prefer setuptools over distutils
-from setuptools import setup
-# To use a consistent encoding
-from gPhoton import __version__
-
-HERE = path.abspath(path.dirname(__file__))
+from setuptools import setup, find_packages
 
 setup(
-    name='gPhoton',
-    version=__version__,
-    description='The GALEX photon project.',
-    url='https://github.com/cmillion/gPhoton',
-    author='Chase Million, et al.',
-    author_email='chase.million@gmail.com',
-    zip_safe=False,
-    license='AURA',
+    name='gPhoton-astro',  # choose a unique name
+    version='1.0.0',
+    author='Joysankar Majumdar',
+    author_email='j.majumdar@uw.edu.pl',
+    description='Modified version of gPhoton for GALEX photon data analysis',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
+    url='https://github.com/joysankar-astro/gPhoton',
+    packages=find_packages(),
+    python_requires='>=3.8',
+    install_requires=[
+        'numpy>=1.20',
+        'pandas>=1.2',
+        'astropy>=5.0',
+        'requests>=2.25',
+        'scipy>=1.6',
+    ],
     classifiers=[
-        'Development Status :: 4 - Beta',
-        'Intended Audience :: Science/Research',
-        'Programming Language :: Python',
-        ],
-    keywords=['astronomy', 'galex', 'photometry', 'ultraviolet'],
-    scripts=['bin/gPipeline', 'bin/gAperture', 'bin/gFind', 'bin/gMap'],
-    packages=['gPhoton', 'gPhoton.cal'],
-    install_requires=['numpy', 'scipy', 'requests>=2.4.0', 'pandas', 'astropy>=1.3', 'future'],
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+    ],
 )
