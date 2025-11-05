@@ -1,3 +1,25 @@
 [build-system]
-requires = ["setuptools", "wheel", "numpy", "pandas", "astropy", "requests", "scipy"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "gPhoton-astro"
+version = "1.0.0"
+description = "Modified version of gPhoton for GALEX photon data analysis"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+  { name = "Joysankar Majumdar", email = "j.majumdar@uw.edu.pl" }
+]
+dependencies = [
+  "numpy>=1.20",
+  "scipy>=1.6",
+  "pandas>=1.2",
+  "astropy>=5.0",
+  "requests>=2.25",
+]
+
+[project.urls]
+Homepage = "https://github.com/joysankar-astro/gPhoton"
+Issues = "https://github.com/joysankar-astro/gPhoton/issues"
