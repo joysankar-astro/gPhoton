@@ -7,7 +7,3 @@ Note that Python 2.x is no longer supported by gPhoton, and many things will bre
 If you use gPhoton software in your research, please cite at least one of the following:
 * _Million, et al. "gPhoton: The GALEX Photon Data Archive." The Astrophysical Journal 833.2 (2016): 292._
 * _Million, et al., 2016, gPhoton, Astrophysics Source Code Library, record ascl:1603.004_
-
-![Logo](https://travis-ci.org/cmillion/gPhoton.svg?branch=master)
-[![Documentation Status](https://readthedocs.org/projects/gphoton/badge/?version=master)](http://gphoton.readthedocs.io/en/master/?badge=master)
-<a href="http://ascl.net/1603.004"><img src="https://img.shields.io/badge/ascl-1603.004-blue.svg?colorB=262255" alt="ascl:1603.004" /></a>
